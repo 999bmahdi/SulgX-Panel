@@ -1653,8 +1653,8 @@ def generate_subscription_content(link: dict, uid: str, addresses: list, extra: 
     if flag_emoji:
         full_remark = flag_emoji + " " + full_remark
     status_node = generate_vless_link(uid, remark=full_remark, address="0.0.0.0", extra=extra)
-    server_node = generate_vless_link(uid, remark=f"{flag_emoji}This Service is Free" if flag_emoji else "This Service is Free", extra=extra)
-    links = [status_node, server_node]
+    # server_node = generate_vless_link(uid, remark=f"{flag_emoji}This Service is Free" if flag_emoji else "This Service is Free", extra=extra)
+    links = [status_node]
     for i, addr in enumerate(addresses):
         links.append(generate_vless_link(uid, remark=f"{flag_emoji}SulgX-{link['label']}-IP{i+1}" if flag_emoji else f"SulgX-{link['label']}-IP{i+1}", address=addr, extra=extra))
     return "\n".join(links)
