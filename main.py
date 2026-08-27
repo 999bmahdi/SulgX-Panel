@@ -1656,7 +1656,7 @@ def generate_subscription_content(link: dict, uid: str, addresses: list, extra: 
     # server_node = generate_vless_link(uid, remark=f"{flag_emoji}This Service is Free" if flag_emoji else "This Service is Free", extra=extra)
     links = [status_node]
     for i, addr in enumerate(addresses):
-        links.append(generate_vless_link(uid, remark=f"{flag_emoji}SulgX-{link['label']}-IP{i+1}" if flag_emoji else f"SulgX-{link['label']}-IP{i+1}", address=addr, extra=extra))
+        links.append(generate_vless_link(uid, remark=f"{flag_emoji}{link['label']}-{i+1}" if flag_emoji else f"{link['label']}-{i+1}", address=addr, extra=extra))
     return "\n".join(links)
 
 def _fmt_bytes(b: int) -> str:
